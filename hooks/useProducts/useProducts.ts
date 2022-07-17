@@ -1,8 +1,8 @@
 import React, { useState, useMemo } from 'react'
-import { Product } from '../../types/productTypes'
+import { IProduct } from '../../types/productTypes'
 
-export default function useProducts(products: Product[]): {
-  filteredProducts: Product[]
+export default function useProducts(products: IProduct[]): {
+  filteredProducts: IProduct[]
   filter: string
   setFilter: (filter: string | ((filter: string) => string)) => void
 } {
@@ -10,10 +10,10 @@ export default function useProducts(products: Product[]): {
   const [allProducts] = useState(products)
 
   const filteredProducts = useMemo(() => {
-    const dfsfdsf = allProducts.filter((p) =>
+    const filtered = allProducts.filter((p) =>
       p.Title.toLowerCase().includes(filter.toLowerCase()),
     )
-    return dfsfdsf
+    return filtered
   }, [allProducts, filter])
 
   return {

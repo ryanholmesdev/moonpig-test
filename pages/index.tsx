@@ -29,21 +29,20 @@ const Home: NextPage<IHomePageProps> = ({ searchResult }) => {
       </Head>
 
       <main>
-        <section className='hero is-info is-small'>
+        <section className='hero is-primary is-orange'>
           <div className='hero-body'>
             <div className='container has-text-centered'>
-              <p className='title'>Moonpig - Cards</p>
+              <p className='title'>Moonpig - Products</p>
             </div>
           </div>
         </section>
         <div className='box cta'>
           <p className='has-text-centered'>
-            <span className='tag is-primary'>New</span> Checkout the latest
-            Moonpig products
+            Checkout the latest Moonpig products
           </p>
         </div>
 
-        <section className='container'>
+        <section className='container p-4'>
           <div className='field is-grouped'>
             <p className='control is-expanded'>
               <input
@@ -56,9 +55,12 @@ const Home: NextPage<IHomePageProps> = ({ searchResult }) => {
             </p>
           </div>
 
-          <div className='columns is-multiline features'>
+          <div className='columns is-multiline mt-4 p-4'>
             {filteredProducts.map((p) => (
-              <div key={p.ProductId} className='column is-one-quarter'>
+              <div
+                key={p.ProductId}
+                className='column is-half-tablet is-half-desktop is-one-third-widescreen is-one-quarter-fullhd'
+              >
                 <ProductCard product={p} />
               </div>
             ))}

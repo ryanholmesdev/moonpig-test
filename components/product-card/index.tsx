@@ -8,12 +8,15 @@ const ProductCard = ({ product }: IProductCardProps) => {
     <Link
       href={`/product-details/${encodeURIComponent(product.MoonpigProductNo)}`}
     >
-      <div className='card product-card is-shady'>
+      <div data-testid='product-card' className='card product-card is-shady'>
         <div className='card-image'>
-          <figure className='image is-4by3'>
+          <figure className='image'>
             <Image
               src={product.ProductImage.Link.Href}
-              layout='fill'
+              width='100%'
+              height='100%'
+              layout='responsive'
+              objectFit='contain'
               loading='lazy'
               alt={product.ProductImage.Link.Title}
             />

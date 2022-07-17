@@ -1,8 +1,8 @@
-import { Product } from './productTypes'
+import { IProduct } from './productTypes'
 
 export interface SearchResult {
   SearchId: string
   NumberofProducts: string
   Start: string
-  Products: Product[]
+  Products: IProduct[]
 }

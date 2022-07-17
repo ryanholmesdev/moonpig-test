@@ -1,11 +1,7 @@
-
-
-
-
-
-
-
-export interface DetailProductType{
-  Title: string;
-  SoldOut: boolean;
+export interface IDetailProduct {
+  Title: string
+  SoldOut: boolean
+  ThumbnailUrl: string
+  SeoPath: string
+  Description: string
 }

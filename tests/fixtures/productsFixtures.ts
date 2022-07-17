@@ -1,6 +1,6 @@
-import { Product } from '../../types/productTypes'
+import { IProduct } from '../../types/productTypes'
 
-export const productsTestData: Product[] = [
+export const productsTestData: IProduct[] = [
   {
     Price: {
       Value: 10.0,

@@ -1,27 +1,27 @@
-export interface Price {
+export interface IPrice {
   Value: number
   Currency: string
 }
 
-export interface Link {
+export interface ILink {
   Href: string
   Method: string
   Rel: string
   Title: string
 }
 
-export interface ProductImage {
-  Link: Link
+export interface IProductImage {
+  Link: ILink
   MimeType: string
 }
 
-export interface Product {
-  Price: Price
+export interface IProduct {
+  Price: IPrice
   SoldOut: boolean
   Title: string
   ProductId: number
   MoonpigProductNo: string
   ShortDescription: string
   Description: string
-  ProductImage: ProductImage
+  ProductImage: IProductImage
 }

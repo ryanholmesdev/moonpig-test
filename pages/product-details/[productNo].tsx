@@ -1,14 +1,17 @@
 import React from 'react'
 import type { NextPage } from 'next'
+import Image from 'next/image'
 import Head from 'next/head'
-import { Product } from '../../types/productTypes'
-import { DetailProductType } from '../../types/detailProductType';
+import { IDetailProduct } from '../../types/detailProductType'
+import ProductInfo from '../../components/product-info'
 
-interface ProductDetailsPageProps {
-  product: DetailProductType;
+interface IProductDetailsPageProps {
+  product: IDetailProduct
 }
 
-const ProductDetailsPage: NextPage<ProductDetailsPageProps> = ({product}) => {
+const ProductDetailsPage: NextPage<IProductDetailsPageProps> = ({
+  product,
+}) => {
   return (
     <div>
       <Head>
@@ -19,45 +22,26 @@ const ProductDetailsPage: NextPage<ProductDetailsPageProps> = ({product}) => {
       </Head>
 
       <main>
-        <section className='hero is-fullheight'>
+        <section className='hero is-fullheight is-default is-bold'>
           <div className='hero-body'>
             <div className='container has-text-centered'>
-              <div className='columns is-8 is-variable '>
-                <div className='column is-two-thirds has-text-left'>
-                  <h1 className='title is-1'></h1>
-                  <p className='is-size-4'>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    Nulla eligendi soluta voluptate facere molestiae
-                    consequatur.
-                  </p>
+              <div className='columns is-vcentered'>
+                <div className='column is-5'>
+                  <Image
+                    src={product.ThumbnailUrl}
+                    width='100%'
+                    height='100%'
+                    layout='responsive'
+                    objectFit='contain'
+                    alt={product.SeoPath}
+                  />
                 </div>
-                <div className='column is-one-third has-text-left'>
-                  <div className='field'>
-                    <label className='label'>Name</label>
-                    <div className='control'>
-                      <input className='input is-medium' type='text' />
-                    </div>
-                  </div>
-                  <div className='field'>
-                    <label className='label'>Email</label>
-                    <div className='control'>
-                      <input className='input is-medium' type='text' />
-                    </div>
-                  </div>
-                  <div className='field'>
-                    <label className='label'>Message</label>
-                    <div className='control'>
-                      <textarea className='textarea is-medium'></textarea>
-                    </div>
-                  </div>
-                  <div className='control'>
-                    <button
-                      type='submit'
-                      className='button is-link is-fullwidth has-text-weight-medium is-medium'
-                    >
-                      Send Message
-                    </button>
-                  </div>
+                <div className='column is-6 is-offset-1'>
+                  <ProductInfo
+                    title={product.Title}
+                    desciption={product.Description}
+                    isSoldOut={product.SoldOut}
+                  />
                 </div>
               </div>
             </div>
@@ -75,10 +59,10 @@ export async function getServerSideProps(context: {
   const request = await fetch(
     `https://moonpig.github.io/tech-test-frontend/product/${productNo}.json`,
   )
-  const response: DetailProductType = await request.json()
+  const response: IDetailProduct = await request.json()
   return {
     props: {
-      product: response
+      product: response,
     },
   }
 }
