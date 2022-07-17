@@ -11,8 +11,6 @@ I also used [Bulma](https://bulma.io/) css framwork, no particular reason just t
 ```bash
 npm install
 npm run dev
-
-testing 
 npm run test
 ```
 
