@@ -1,0 +1,22 @@
+@import 'bulma/bulma';
+
+.product-card:hover {
+  transform: translate3D(0,-1px,0) scale(1.03);
+}
+
+.product-card {
+  cursor: pointer;
+  box-shadow: 8px 14px 38px rgba(39,44,49,.06), 1px 3px 8px rgba(39,44,49,.03);
+  transition: all .5s ease; 
+
+}
+.product-card:hover {
+  box-shadow: 8px 28px 50px rgba(39,44,49,.07), 1px 6px 12px rgba(39,44,49,.04);
+  transition: all .4s ease; 
+}
+
+.product-card {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
