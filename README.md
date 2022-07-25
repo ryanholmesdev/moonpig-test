@@ -4,7 +4,7 @@ I hope you don't mind me building this in Next.js. I used it because it was on y
 
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
-I also used [Bulma](https://bulma.io/) css framwork, no particular reason just thought I would try this one out as I havent touched this before.
+I also used [Bulma](https://bulma.io/) css framwork.
 
 ## Getting Started
 
